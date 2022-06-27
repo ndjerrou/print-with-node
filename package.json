@@ -4,6 +4,7 @@
   "description": "",
   "main": "playground.js",
   "scripts": {
+    "start": "nodemon app.js",
     "create:pdf": "node utilities/createPDF.js",
     "print": "node utilities/printFile"
   },
@@ -12,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "@thiagoelg/node-printer": "^0.6.2",
+    "cors": "^2.8.5",
     "node-printer": "^1.0.4",
+    "nodemon": "^2.0.18",
     "pdf-creator-node": "^2.3.4",
     "pdfkit": "^0.13.0",
     "zuzel-printer": "^1.0.4"

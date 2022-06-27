@@ -1,8 +1,8 @@
 // use: node printFile.js [filePath printerName]
 const printer = require('@thiagoelg/node-printer');
 const fs = require('fs');
-
-function print(filename = `./data/example.pdf`) {
+// filename = `./data/example.pdf`
+function print(str) {
   console.log('filename received = ', filename);
   if (process.platform != 'win32') {
     printer.printFile({
@@ -18,7 +18,7 @@ function print(filename = `./data/example.pdf`) {
   } else {
     // not yet implemented, use printDirect and text
     printer.printDirect({
-      data: 'kikoo',
+      data: str,
       printer: undefined, // printer name, if missing then will print to default printer
       success: function (jobID) {
         console.log('sent to printer with ID: ' + jobID);
@@ -29,7 +29,5 @@ function print(filename = `./data/example.pdf`) {
     });
   }
 }
-
-print();
 
 module.exports = print;
