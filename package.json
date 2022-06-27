@@ -4,7 +4,8 @@
   "description": "",
   "main": "playground.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "create:pdf": "node utilities/createPDF.js",
+    "print": "node utilities/printFile"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,8 @@
   "dependencies": {
     "@thiagoelg/node-printer": "^0.6.2",
     "node-printer": "^1.0.4",
+    "pdf-creator-node": "^2.3.4",
+    "pdfkit": "^0.13.0",
     "zuzel-printer": "^1.0.4"
   }
 }

@@ -1,32 +1,19 @@
-// use: node printFile.js [filePath printerName]
-const printer = require('@thiagoelg/node-printer');
-const fs = require('fs');
+//////////////////////////////////////////////////////////////////////
+const filename = process.argv[2]
+  ? `${__dirname}/tickets/${process.argv[2]}`
+  : `${__dirname}/data/example.pdf`;
 
-const filename = __dirname + '/cv.pdf';
+// require('./utilities/createPDF');
+require('./utilities/printFile')(filename);
 
-console.log('platform:', process.platform);
+// console.log('platform:', process.platform);
 
-if (process.platform != 'win32') {
-  printer.printFile({
-    filename: filename,
-    printer: process.env[3], // printer name, if missing then will print to default printer
-    success: function (jobID) {
-      console.log('sent to printer with ID: ' + jobID);
-    },
-    error: function (err) {
-      console.log(err);
-    },
-  });
-} else {
-  // not yet implemented, use printDirect and text
-  printer.printDirect({
-    data: fs.readFileSync(filename),
-    printer: undefined, // printer name, if missing then will print to default printer
-    success: function (jobID) {
-      console.log('sent to printer with ID: ' + jobID);
-    },
-    error: function (err) {
-      console.log(err);
-    },
-  });
-}
+// console.log(printer.getPrinters());
+
+//
+const express = require('express');
+const app = express();
+
+app.get('*', (req, res) => {});
+
+// app.listen(9000, () => console.log('Server on 9000'));
