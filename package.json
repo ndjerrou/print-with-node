@@ -1,0 +1,17 @@
+{
+  "name": "printers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "playground.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@thiagoelg/node-printer": "^0.6.2",
+    "node-printer": "^1.0.4",
+    "zuzel-printer": "^1.0.4"
+  }
+}
